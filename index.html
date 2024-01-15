@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YouTube Video Examples</title>
+    <script src="https://www.youtube.com/iframe_api"></script>
+    <script>
+        let player;
+
+        function onYouTubeIframeAPIReady() {
+            player = new YT.Player('player', {
+                height: '315',
+                width: '560',
+                videoId: 'BK5rwsVizpQ', // Replace 'VIDEO_ID' with the actual video ID
+                events: {
+                    'onReady': onPlayerReady,
+                    'onStateChange': onPlayerStateChange
+                }
+            });
+        }
+
+        function onPlayerReady(event) {
+            // Optional: Do something when the player is ready
+        }
+
+        function onPlayerStateChange(event) {
+            // Optional: Do something when the player's state changes
+        }
+    </script>
+    <style>
+        .video-container {
+            position: relative;
+            width: 100%;
+            padding-bottom: 56.25%;
+            /* 16:9 aspect ratio */
+            height: 0;
+        }
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+</head>
+<body>
+    <h1>Example 1: Basic Embedding</h1>
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/BK5rwsVizpQ" frameborder="0" allowfullscreen></iframe>
+
+    <h1>Example 2: Responsive Embedding</h1>
+    <div class="video-container">
+        <iframe src="https://www.youtube.com/embed/BK5rwsVizpQ" frameborder="0" allowfullscreen></iframe>
+    </div>
+
+    <h1>Example 3: Using YouTube Embedded Player API</h1>
+    <div id="player"></div>
+
+    <h1>Example 4: Autoplay and Looping</h1>
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/BK5rwsVizpQ?autoplay=1&loop=1" frameborder="0" allowfullscreen></iframe>
+</body>
+</html>
+
